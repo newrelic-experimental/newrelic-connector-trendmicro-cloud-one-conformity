@@ -79,6 +79,7 @@ functions:
     timeout: 120 # 2 minutes
     environment:
       NEW_RELIC_INSERT_KEY: ${self:custom.config.NEW_RELIC_INSERT_KEY}
+      CLOUD_CONFORMITY_API_KEY: ${self:custom.config.CLOUD_CONFORMITY_API_KEY}
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
