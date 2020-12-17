@@ -55,7 +55,7 @@ def handleScheduledEvent(event):
   import requests
   CC_REGION = 'us-west-2'
   CC_ACCOUNTIDS = 'BVyTCW0Va'
-  CC_APIKEY = '5t9wNUCwoYRAKtnmSCzqqmeJ7ipAGW5xKRGdSicvN2PH55oh1NwF215JryYVxxTc'
+  CC_APIKEY = os.environ["CLOUD_CONFORMITY_API_KEY"]
   CC_PAGE_SIZE = 1000
   CC_REGIONS = ['global', 'us-east-1', 'us-east-2', 'us-west-1', 'us-west-2', 'ap-south-1', 'ap-northeast-2',
 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'ap-east-1', 'ca-central-1', 'eu-central-1', 'eu-west-1',
