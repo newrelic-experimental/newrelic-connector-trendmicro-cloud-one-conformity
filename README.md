@@ -1,6 +1,9 @@
 [![New Relic Experimental header](https://github.com/newrelic/opensource-website/raw/master/src/images/categories/Experimental.png)](https://opensource.newrelic.com/oss-category/#new-relic-experimental)
 
-# [Name of Project] [build badges go here when available]
+# [New Relic connector for Trend Micro Cloud One Conformity]
+
+>The project integrates [Trend Micro Cloud One Conformity](https://www.trendmicro.com/en_us/business/products/hybrid-cloud/cloud-one-conformity.html) with [New Relic](https://newrelic.com/) when using the [AWS integration](https://www.cloudconformity.com/help/conformity-bot/aws-integration.html). The solution relies on [Amazon SNS](https://www.cloudconformity.com/help/communication/communication-channels/amazon-sns-communication.html) integration offered by Conformity. With this integration, you will complement your AWS observability by adding in Conformity monitoring, now using your New Relic account.
+
 
 >[Brief description - what is the project and value does it provide? How often should users expect to get releases? How is versioning set up? Where does this project want to go?]
 
