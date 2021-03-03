@@ -25,6 +25,4 @@ node_modules/
 
 # Serverless directories
 .serverless
-
-# Config
-config.dev.yml
+config.test.yml
