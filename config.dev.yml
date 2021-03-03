@@ -1,0 +1,15 @@
+# The name of the Amazon S3 bucket that the "Conformity-to-S3" solution deploys for you. 
+# You can find the bucket name by looking up the "EventsBucket" output from the AWS CloudFormation Stack 
+# that the "Conformity-to-S3" solution was deployed under.
+# @see https://github.com/raphabot/Conformity-to-S3#outputs
+TRENDMICRO_CONFORMITY_BUCKET_NAME: "<S3_BUCKET_NAME_DEPLOYED_BY_CONFORMITY_TO_S3>"
+# The Insert API Key for your New Relic account.
+# @see https://docs.newrelic.com/docs/telemetry-data-platform/ingest-manage-data/ingest-apis/introduction-event-api#register
+NEW_RELIC_INSERT_KEY: "<YOUR_NEW_RELIC_INSERT_KEY>"
+# Conformity Public API Key for your user
+# @see https://www.cloudconformity.com/help/public-api/api-keys.html
+CLOUD_CONFORMITY_API_KEY: "<YOUR_CONFORMITY_USER_API_KEY>"
+# The Conformity assigned Id of the AWS account linked with your Conformity account.
+# You can find your account Id by selecting your AWS account in the "Dashboard", and look for it in the browser address bar
+# https://<AWS_REGION>.cloudconformity.com/account/<ACCOUNT_ID>
+CLOUD_CONFORMITY_ACCOUNT_ID: "<CONFORMITY_ID_OF_YOUR_LINKED_AWS_ACCOUNT>"
