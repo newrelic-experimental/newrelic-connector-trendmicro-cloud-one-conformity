@@ -9,7 +9,7 @@ NEW_RELIC_INSERT_KEY: "<YOUR_NEW_RELIC_INSERT_KEY>"
 # Conformity Public API Key for your user
 # @see https://www.cloudconformity.com/help/public-api/api-keys.html
 CLOUD_CONFORMITY_API_KEY: "<YOUR_CONFORMITY_USER_API_KEY>"
-# The Conformity assigned Id of the AWS account linked with your Conformity account.
-# You can find your account Id by selecting your AWS account in the "Dashboard", and look for it in the browser address bar
-# https://<AWS_REGION>.cloudconformity.com/account/<ACCOUNT_ID>
+# The Conformity assigned Id of the AWS account linked with your Cloud One account.
+# You can find your account Id by selecting your AWS account in the Conformity "Dashboard", and look for it in the browser address bar
+# https://cloudone.trendmicro.com/conformity/account/<ACCOUNT_ID>
 CLOUD_CONFORMITY_ACCOUNT_ID: "<CONFORMITY_ID_OF_YOUR_LINKED_AWS_ACCOUNT>"
