@@ -2,7 +2,9 @@
 
 # New Relic connector for Trend Micro Cloud One Conformity
 
->The project integrates [Trend Micro Cloud One Conformity](https://www.trendmicro.com/en_us/business/products/hybrid-cloud/cloud-one-conformity.html) ("Conformity") with [New Relic](https://newrelic.com/) when using the [AWS integration](https://www.cloudconformity.com/help/conformity-bot/aws-integration.html). The "solution" relies on [Amazon SNS](https://www.cloudconformity.com/help/communication/communication-channels/amazon-sns-communication.html) integration offered by Conformity. With this integration, you will complement your AWS observability by adding in Conformity monitoring, now using your New Relic account alongside all the telemetry for all your applications and services.
+>The project integrates [Trend Micro Cloud One Conformity](https://www.trendmicro.com/en_us/business/products/hybrid-cloud/cloud-one-conformity.html) ("Conformity") with [New Relic](https://newrelic.com/) when using the [AWS integration](https://www.cloudconformity.com/help/conformity-bot/aws-integration.html). The "solution" (aka "integration" or "connector") relies on [Amazon SNS](https://www.cloudconformity.com/help/communication/communication-channels/amazon-sns-communication.html) integration offered by Conformity. With this solution, you will complement your AWS observability by adding in Conformity's AWS Well-Architected and compliance views for your workloads running on AWS, right next to your larger single-pane-of-glass using New Relic for all your observability needs.
+
+> The solution is developed and deployed using the [serverless framework](https://www.serverless.com/open-source/) and deploys a AWS CloudFormation stack in your account. It requires that you’ve deployed the [Conformity-to-S3](https://github.com/raphabot/Conformity-to-S3) solution beforehand.
 
 ## Installation
 
@@ -13,28 +15,37 @@
 
 > Deploy [Conformity-to-S3](https://github.com/raphabot/Conformity-to-S3) solution to your AWS account before you deploy this solution. The quickest way to do so is by using this AWS CloudFormation [template](https://github.com/raphabot/Conformity-to-S3/releases/latest/download/ConformityToS3Stack.template.json).
 
+> Enable Amazon SNS communication from your Conformity account to your linked AWS account, using the Amazon SNS Topic that the "Conformity-to-S3" solution deploys for you. You can find the Topic ARN by looking up the "TopicARN" [output](https://github.com/raphabot/Conformity-to-S3#outputs) from the AWS CloudFormation Stack that the "Conformity-to-S3" solution was deployed under.
+
 > Be sure to add the necessary information to the  configuration file `config.dev.yml` in the project root directory. Replace the placeholders (in chevrons) with actual values. If you choose to fork this repository, do not commit this file as it holds sensitive information about your Trend Micro and New Relic accounts.
 
 > Make sure you've set up [AWS Command Line Interface](https://aws.amazon.com/cli/) (AWS CLI) in your machine or build host from where you plan to deploy this solution.
 
-> Make sure you've installed the latest version of `serverless` CLI.
+> Make sure you've installed the latest version of [serverless](https://www.serverless.com/framework/docs/getting-started/) CLI.
 
 > You need to have [Docker](https://docs.docker.com/install/) installed, along with [Python 3](https://www.python.org/downloads/).
 
 > Initialize the node modules by running this command from the project root directory:
  `npm install`
 
-> Deploy the solution using [serverless](https://www.serverless.com/framework/docs/getting-started/) CLI by running the following command. If you have [AWS CLI profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) set up, include `–-profile <Profile Name>`.
+## Deployment
+
+> Deploy the solution using serverless CLI by running the following command. If you have [AWS CLI profile](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) set up, include `–-profile <PROFILE_NAME>`.
 
 > `sls deploy`
 
 > This deploys the solution using the configuration defined in `config.dev.yml` file in the `us-east-1` Region of your AWS account, by default. You can specify the AWS account and Region by setting up your AWS CLI Profile on your machine or build host. You must deploy this solution in the same account and Region where you deployed the "Conformity-to-S3" solution.
 
 ## Getting Started
-Refer to this [architecture diagram](architecture.png) for this solution's deployment architecture in your AWS environment.
-Once the solution is deployed to your AWS account, you should start to see the custom event named `TMCloudOneConformityEvent` reported into your New Relic Dashboards and Data Explorer.
+Here's the solution's deployment architecture in your AWS environment.
 
-You can then build a [dashboard](new-relic-dashboard.png) in your New Relic account to keep tabs on your AWS account checks reported by Conformity.
+<img src="architecture.png" width="100%">
+
+Once the solution is deployed to your AWS account, you should start to see the custom event named `TMCloudOneConformityEvent` reported into your New Relic account using [Data Explorer](https://docs.newrelic.com/docs/query-your-data/explore-query-data/explore-data/introduction-data-explorer).
+
+You can then build a [dashboard](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards) in your New Relic account to keep tabs on your AWS account checks reported by Conformity. Following is an illustrative dashboard that enables you to gain insights into Conformity reported events for your linked AWS account(s).
+
+<img src="new-relic-dashboard.png" width="100%">
 
 ## Support
 

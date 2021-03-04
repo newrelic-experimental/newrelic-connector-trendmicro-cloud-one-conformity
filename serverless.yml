@@ -42,9 +42,9 @@ functions:
             - suffix: .json
           existing: true  
       - schedule:
-          name: reload-all-cc-checks
-          description: 'Reload all CC checks every 7 days'
-          rate: rate(5 minutes)
+          name: fetch-all-conformity-checks
+          description: 'Fetch all Conformity checks'
+          rate: rate(7 days)
     timeout: 120 # 2 minutes
     environment:
       NEW_RELIC_INSERT_KEY: ${self:custom.config.NEW_RELIC_INSERT_KEY}
