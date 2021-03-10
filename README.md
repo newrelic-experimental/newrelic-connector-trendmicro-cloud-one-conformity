@@ -10,7 +10,7 @@
 
 > Make sure the following requirements are met:
 > * You have access to an AWS account where you can deploy this solution. If you don't have an AWS account, you can [sign up for free tier](https://aws.amazon.com/free).
-> * You have access to a Trend Micro Cloud One account with Conformity subscription. Make sure you [add your AWS account to Conformity](https://www.cloudconformity.com/help/add-cloud-account/add-an-aws-account.html). If you don't already have a Cloud One account, you can [sign up](https://cloudone.trendmicro.com/) for a new account that includes a 30-day free trial.
+> * You have access to a [Trend Micro Cloud One](https://cloudone.trendmicro.com/) account with Conformity subscription. Make sure you [add your AWS account to Conformity](https://www.cloudconformity.com/help/add-cloud-account/add-an-aws-account.html). If you don't already have a Cloud One account, you can sign up for a new account that includes a 30-day free trial.
 > * You have access to a New Relic account. Make sure you [add your AWS account to New Relic](https://docs.newrelic.com/docs/integrations/amazon-integrations/get-started/connect-aws-new-relic-infrastructure-monitoring). If you don’t already have a New Relic account, you can sign up for a free account in the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B08L5FQMTG).
 
 > Deploy [Conformity-to-S3](https://github.com/raphabot/Conformity-to-S3) solution to your AWS account before you deploy this solution. The quickest way to do so is by using this AWS CloudFormation [template](https://github.com/raphabot/Conformity-to-S3/releases/latest/download/ConformityToS3Stack.template.json).
@@ -55,7 +55,7 @@ To create the Conformity dashboard into your New Relic account, follow these ste
 
 4. Navigate to the dashboard in your New Relic account by searching for it by name, i.e. "TrendMicroCloudOneConformity". To access dashboards, go to your [New Relic account](http://one.newrelic.com/) and click on "Dashboards" on the top navigation menu.
 
-<img src="images/new-relic-dashboard.png" width="100%">
+<img src="images/dashboard.png" width="100%">
 
 ## Support
 
