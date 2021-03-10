@@ -34,18 +34,28 @@
 
 > `sls deploy`
 
-> This deploys the solution using the configuration defined in `config.dev.yml` file in the `us-east-1` Region of your AWS account, by default. You can specify the AWS account and Region by setting up your AWS CLI Profile on your machine or build host. You must deploy this solution in the same account and Region where you deployed the "Conformity-to-S3" solution.
+> This deploys the solution using the configuration defined in [config.dev.yml](config.dev.yml) file in the `us-east-1` Region of your AWS account, by default. You can specify the AWS account and Region by setting up your AWS CLI Profile on your machine or build host. You must deploy this solution in the same account and Region where you deployed the "Conformity-to-S3" solution.
 
 ## Getting Started
 Here's the solution's deployment architecture in your AWS environment.
 
-<img src="architecture.png" width="100%">
+<img src="images/architecture.png" width="100%">
 
 Once the solution is deployed to your AWS account, you should start to see the custom event named `TMCloudOneConformityEvent` reported into your New Relic account using [Data Explorer](https://docs.newrelic.com/docs/query-your-data/explore-query-data/explore-data/introduction-data-explorer).
 
-You can then build a [dashboard](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards) in your New Relic account to keep tabs on your AWS account checks reported by Conformity. Following is an illustrative dashboard that enables you to gain insights into Conformity reported events for your linked AWS account(s).
+You can then build a [dashboard](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards) in your New Relic account to keep tabs on your AWS account checks reported by Conformity. Following is an illustrative New Relic dashboard for Trend Micro Cloud One Conformity  ("Conformity dashboard") that enables you to gain insights into Conformity reported events for your linked AWS account(s).
 
-<img src="new-relic-dashboard.png" width="100%">
+To create the Conformity dashboard into your New Relic account, follow these steps:
+
+1. Review the contents of the file: [create-dashboard-mutation.txt](dashboard/create-dashboard-mutation.txt). Replace all placeholders marked `<NEW_RELIC_ACCOUNT_ID>` with your [New Relic Account ID](https://docs.newrelic.com/docs/accounts/accounts-billing/account-setup/account-id/). This file contains the payload for the NerdGraph mutation that creates the Conformity dashboard in your New Relic account. NerdGraph is [New Relic’s unified API in a GraphQL](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/) flavor.
+
+2. Navigate to New Relic's [NerdGraph GraphiQL explorer](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/#explorer)
+
+3. Create the dashboard by providing the payload for the [mutation](https://graphql.org/learn/queries/#mutations) in the GraphiQL explorer.
+
+4. Navigate to the dashboard in your New Relic account by searching for it by name, i.e. "TrendMicroCloudOneConformity". To access dashboards, go to your [New Relic account](http://one.newrelic.com/) and click on "Dashboards" on the top navigation menu.
+
+<img src="images/new-relic-dashboard.png" width="100%">
 
 ## Support
 
